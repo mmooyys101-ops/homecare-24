@@ -4,131 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>강남 프리미엄 홈케어 | 24시간 상담 · 즉시 예약</title>
-<meta name="description" content="강남 역삼 프리미엄 홈케어 방문 서비스. 24시간 상담, 빠른 방문, 간편 예약.">
+<title>강남 24시 프리미엄 홈케어 | 즉시 상담 · 빠른 예약</title>
+<meta name="description" content="강남 역삼 프리미엄 홈케어 방문 서비스. 24시간 상담, 빠른 예약, 프라이빗 1:1 케어. 전화 및 카카오톡으로 즉시 문의 가능합니다.">
+<meta name="keywords" content="강남 홈케어, 역삼 홈케어, 강남 방문케어, 24시 홈케어, 프리미엄 홈케어, 강남 예약 서비스">
 
 <style>
-html {scroll-behavior:smooth;}
-body {margin:0;font-family:Arial;background:#0b0f0c;color:#fff;}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,'Noto Sans KR',sans-serif;background:#0b0f0c;color:#fff;padding-bottom:58px}
+.header{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);z-index:999;box-sizing:border-box}
+.logo{color:#d4af37;font-weight:900;letter-spacing:.5px}
+.nav a{color:#fff;margin:0 8px;text-decoration:none;font-size:14px}
+.nav a.active,.nav a:hover{color:#d4af37;border-bottom:2px solid #d4af37}
+.hero{position:relative;min-height:92vh;background:url('main.jpg') center/cover no-repeat;display:flex;align-items:center}
+.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.42),rgba(0,0,0,.2))}
+.hero-content{position:relative;z-index:2;padding:90px 22px 40px;max-width:720px}
+.badge{display:inline-block;border:1px solid #d4af37;color:#d4af37;border-radius:999px;padding:8px 16px;font-weight:bold;margin-bottom:14px}
+.hero h1{font-size:40px;line-height:1.25;margin:0;color:#fff}
+.hero h1 span{color:#d4af37}
+.hero p{color:#eee;margin:18px 0;font-size:18px;line-height:1.7}
+.btn{display:inline-block;padding:15px 24px;margin:6px;border-radius:12px;text-decoration:none;font-weight:900}
+.phone{background:#0f5132;color:#fff;border:1px solid #d4af37}
+.kakao{background:#FEE500;color:#000}
+.trust{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.trust div{border-left:3px solid #d4af37;padding:8px 12px;background:rgba(0,0,0,.35);border-radius:8px}
 
-.header {
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    display:flex;
-    justify-content:space-between;
-    padding:15px 20px;
-    background:rgba(0,0,0,0.8);
-    backdrop-filter: blur(10px);
-    z-index:999;
-}
-.logo {color:#d4af37;font-weight:bold;}
-.nav a {
-    color:#fff;
-    margin:0 8px;
-    text-decoration:none;
-}
-.nav a.active {
-    color:#d4af37;
-    border-bottom:2px solid #d4af37;
-}
+.section{padding:58px 20px;text-align:center;background:#f7f3ed;color:#111}
+.section.dark{background:#111;color:#fff}
+.section h2{font-size:28px;margin:0 0 24px;color:#111}
+.section.dark h2{color:#d4af37}
+.cards,.features,.reviews{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;max-width:1050px;margin:0 auto}
+.feature,.card,.review{background:#fff;color:#111;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(0,0,0,.12)}
+.feature{width:210px}
+.card{width:250px;overflow:hidden;padding:0}
+.card img{width:100%;height:170px;object-fit:cover;display:block}
+.card h3{margin:16px 0 8px}
+.card p{padding:0 16px 18px;margin:0;line-height:1.6;color:#444}
+.price{max-width:430px;margin:0 auto;background:#06291d;color:#fff;padding:24px;border-radius:18px;border:1px solid #d4af37}
+.price-row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(212,175,55,.35);padding:13px 0;font-size:20px}
+.review{width:280px;line-height:1.7}
+.map-wrap{max-width:720px;margin:0 auto}
+iframe{width:100%;height:330px;border:0;border-radius:16px}
 
-.hero {
-    position:relative;
-    height:90vh;
-    background:url('main.jpg') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-}
-.hero::after {
-    content:'';
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
-}
-.hero-content {
-    position:relative;
-    z-index:2;
-    padding:20px;
-}
-.hero h1 {font-size:32px;color:#d4af37;}
-.hero p {color:#ddd;margin:15px 0;}
+.cta{background:linear-gradient(90deg,#07140e,#1d1408);padding:45px 20px;text-align:center}
+.cta h2{color:#fff;margin:0 0 16px}
+.footer{background:#000;text-align:center;padding:22px;font-size:12px;color:#aaa}
+.fixed-bar{position:fixed;bottom:0;left:0;width:100%;display:flex;z-index:999}
+.fixed-bar a{flex:1;text-align:center;padding:16px 8px;font-weight:900;text-decoration:none}
+.fixed-bar a:first-child{background:#0f5132;color:#fff}
+.fixed-bar a:last-child{background:#FEE500;color:#000}
 
-.btn {
-    display:inline-block;
-    padding:14px 20px;
-    margin:5px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-}
-.phone {background:#1a73e8;color:#fff;}
-.kakao {background:#FEE500;color:#000;}
-
-.section {
-    padding:60px 20px;
-    text-align:center;
-    background:#f5f5f5;
-    color:#000;
-}
-
-.features, .cards {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-}
-
-.feature, .card {
-    background:#fff;
-    padding:20px;
-    border-radius:12px;
-    width:200px;
-}
-
-.card img {
-    width:100%;
-    border-radius:10px;
-}
-
-.price {
-    background:#0f3d2e;
-    color:#fff;
-    padding:20px;
-    border-radius:10px;
-    display:inline-block;
-}
-
-.fixed-bar {
-    position:fixed;
-    bottom:0;
-    width:100%;
-    display:flex;
-    z-index:999;
-}
-.fixed-bar a {
-    flex:1;
-    text-align:center;
-    padding:15px;
-    font-weight:bold;
-    text-decoration:none;
-}
-.fixed-bar a:first-child {
-    background:#1a73e8;
-    color:#fff;
-}
-.fixed-bar a:last-child {
-    background:#FEE500;
-    color:#000;
-}
-
-.footer {
-    background:#000;
-    text-align:center;
-    padding:20px;
-    font-size:12px;
+@media(max-width:700px){
+  .nav{display:none}
+  .hero h1{font-size:30px}
+  .hero p{font-size:16px}
+  .btn{display:block;text-align:center;margin:10px 0}
 }
 </style>
 </head>
@@ -136,98 +65,127 @@ body {margin:0;font-family:Arial;background:#0b0f0c;color:#fff;}
 <body>
 
 <div class="header">
-    <div class="logo">VIP HOMECARE</div>
-    <div class="nav">
-        <a href="#home">홈</a>
-        <a href="#service">서비스</a>
-        <a href="#price">요금</a>
-        <a href="#review">후기</a>
+  <div class="logo">VIP HOMECARE</div>
+  <div class="nav">
+    <a href="#home">홈</a>
+    <a href="#service">서비스</a>
+    <a href="#price">요금</a>
+    <a href="#review">후기</a>
+    <a href="#map">위치</a>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="badge">24시간 상담 가능</div>
+    <h1>강남 <span>24시</span><br>프리미엄 홈케어</h1>
+    <p>30분 내 빠른 상담 · 프라이빗 1:1 케어 · 역삼/강남 인근 빠른 예약</p>
+    <a class="btn phone" href="tel:01068600697">📞 지금 바로 예약하기</a>
+    <a class="btn kakao" href="https://open.kakao.com/o/sMzFxoti" target="_blank">💬 카톡 상담 바로가기</a>
+    <div class="trust">
+      <div>빠른 응대</div>
+      <div>24시간 상담</div>
+      <div>프라이빗 진행</div>
     </div>
-</div>
+  </div>
+</section>
 
-<div class="hero" id="home">
-    <div class="hero-content">
-        <h1>강남 프리미엄 방문 홈케어</h1>
-        <p>24시간 상담 · 빠른 방문 · 프라이빗 케어</p>
+<section class="section">
+  <h2>안심 포인트</h2>
+  <div class="features">
+    <div class="feature">✔ 철저한 위생 관리</div>
+    <div class="feature">✔ 예약제 운영</div>
+    <div class="feature">✔ 강남/역삼 빠른 대응</div>
+    <div class="feature">✔ 프라이빗 상담</div>
+  </div>
+</section>
 
-        <a class="btn phone" href="tel:01068600697">📞 전화 예약</a>
-        <a class="btn kakao" href="https://open.kakao.com/o/sMzFxoti">💬 카톡 상담</a>
+<section class="section dark" id="service">
+  <h2>서비스 안내</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="service1.jpg" alt="스웨디시 케어">
+      <h3>스웨디시 케어</h3>
+      <p>부드럽고 섬세한 터치로 편안한 휴식을 돕습니다.</p>
     </div>
-</div>
-
-<div class="section" id="service">
-    <h2>서비스 안내</h2>
-    <div class="cards">
-        <div class="card">
-            <img src="service1.jpg">
-            <p>스웨디시 마사지</p>
-        </div>
-        <div class="card">
-            <img src="service2.jpg">
-            <p>아로마 테라피</p>
-        </div>
-        <div class="card">
-            <img src="service3.jpg">
-            <p>힐링 마사지</p>
-        </div>
+    <div class="card">
+      <img src="service2.jpg" alt="아로마 테라피">
+      <h3>아로마 테라피</h3>
+      <p>은은한 아로마 분위기로 안정감을 높입니다.</p>
     </div>
-</div>
-
-<div class="section" id="price">
-    <h2>이용 요금</h2>
-    <div class="price">
-        60분 100,000원<br>
-        90분 140,000원<br>
-        120분 180,000원
+    <div class="card">
+      <img src="service3.jpg" alt="힐링 케어">
+      <h3>힐링 케어</h3>
+      <p>피로한 하루를 편안하게 마무리할 수 있도록 돕습니다.</p>
     </div>
-</div>
+  </div>
+</section>
 
-<div class="section" id="review">
-    <h2>고객 후기</h2>
-    <p>⭐⭐⭐⭐⭐ 만족도 높은 서비스</p>
-</div>
+<section class="section" id="price">
+  <h2>이용 요금</h2>
+  <div class="price">
+    <div class="price-row"><span>60분</span><strong>100,000원</strong></div>
+    <div class="price-row"><span>90분</span><strong>140,000원</strong></div>
+    <div class="price-row"><span>120분</span><strong>180,000원</strong></div>
+    <p>※ 상세 안내는 전화/카카오톡으로 문의해주세요.</p>
+  </div>
+</section>
 
-<div class="section">
-    <h2>위치 안내</h2>
-    <iframe src="https://www.google.com/maps?q=역삼역&output=embed"
-    width="100%" height="300" style="border-radius:10px;"></iframe>
-</div>
+<section class="section dark">
+  <h2>이용 방법</h2>
+  <div class="features">
+    <div class="feature">1. 전화/카톡 문의</div>
+    <div class="feature">2. 일정 상담</div>
+    <div class="feature">3. 위치 안내</div>
+    <div class="feature">4. 예약 진행</div>
+  </div>
+</section>
 
-<div class="section">
-    <h2>지금 바로 예약하세요</h2>
-    <a class="btn phone" href="tel:01068600697">📞 전화하기</a>
-    <a class="btn kakao" href="https://open.kakao.com/o/sMzFxoti">💬 카톡</a>
-</div>
+<section class="section" id="review">
+  <h2>고객 후기</h2>
+  <div class="reviews">
+    <div class="review">“응대가 빨라서 편했습니다.”<br>⭐⭐⭐⭐⭐</div>
+    <div class="review">“상담이 친절하고 이용이 간편했어요.”<br>⭐⭐⭐⭐⭐</div>
+    <div class="review">“예약 과정이 깔끔해서 만족했습니다.”<br>⭐⭐⭐⭐⭐</div>
+  </div>
+</section>
+
+<section class="section" id="map">
+  <h2>위치 안내</h2>
+  <p>서울 강남구 역삼역 인근 빠른 대응</p>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=역삼역&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>지금 바로 상담하고 예약하세요</h2>
+  <a class="btn phone" href="tel:01068600697">📞 010-6860-0697</a>
+  <a class="btn kakao" href="https://open.kakao.com/o/sMzFxoti" target="_blank">💬 카카오톡 상담</a>
+</section>
 
 <div class="footer">
-    © Homecare Service
+  © Homecare Service. All rights reserved.
 </div>
 
-<!-- 🔥 하단 고정 -->
 <div class="fixed-bar">
-    <a href="tel:01068600697">📞 전화</a>
-    <a href="https://open.kakao.com/o/sMzFxoti">💬 카톡</a>
+  <a href="tel:01068600697">📞 전화 예약</a>
+  <a href="https://open.kakao.com/o/sMzFxoti" target="_blank">💬 카톡 상담</a>
 </div>
 
 <script>
-const sections = document.querySelectorAll("div[id]");
+const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav a");
-
 window.addEventListener("scroll", () => {
   let current = "";
-
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (pageYOffset >= sectionTop) {
+    if (window.pageYOffset >= section.offsetTop - 120) {
       current = section.getAttribute("id");
     }
   });
-
   navLinks.forEach(a => {
     a.classList.remove("active");
-    if (a.getAttribute("href") === "#" + current) {
-      a.classList.add("active");
-    }
+    if (a.getAttribute("href") === "#" + current) a.classList.add("active");
   });
 });
 </script>
