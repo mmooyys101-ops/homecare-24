@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>강남 프리미엄 홈케어 | 24시간 상담 · 즉시 예약</title>
-
-<meta name="description" content="강남 역삼 프리미엄 홈케어 방문 서비스. 24시간 상담, 빠른 방문, 간편 예약. 전화 및 카카오톡 상담 가능.">
+<meta name="description" content="강남 역삼 프리미엄 홈케어 방문 서비스. 24시간 상담, 빠른 방문, 간편 예약.">
 
 <style>
+html {scroll-behavior:smooth;}
 body {margin:0;font-family:Arial;background:#0b0f0c;color:#fff;}
 
 .header {
@@ -18,45 +18,49 @@ body {margin:0;font-family:Arial;background:#0b0f0c;color:#fff;}
     left:0;
     display:flex;
     justify-content:space-between;
-    align-items:center;
     padding:15px 20px;
     background:rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
     z-index:999;
 }
-.logo {color:#d4af37;font-weight:bold;font-size:18px;}
-
+.logo {color:#d4af37;font-weight:bold;}
 .nav a {
     color:#fff;
-    margin:0 10px;
+    margin:0 8px;
     text-decoration:none;
-    font-size:14px;
+}
+.nav a.active {
+    color:#d4af37;
+    border-bottom:2px solid #d4af37;
 }
 
 .hero {
+    position:relative;
     height:90vh;
     background:url('main.jpg') center/cover no-repeat;
     display:flex;
-    flex-direction:column;
-    justify-content:center;
+    align-items:center;
+}
+.hero::after {
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+.hero-content {
+    position:relative;
+    z-index:2;
     padding:20px;
-    text-align:left;
 }
-
-.hero h1 {
-    font-size:34px;
-    color:#d4af37;
-}
-
-.hero p {
-    color:#ddd;
-    margin:15px 0;
-}
+.hero h1 {font-size:32px;color:#d4af37;}
+.hero p {color:#ddd;margin:15px 0;}
 
 .btn {
     display:inline-block;
     padding:14px 20px;
-    margin-right:10px;
-    border-radius:8px;
+    margin:5px;
+    border-radius:10px;
     text-decoration:none;
     font-weight:bold;
 }
@@ -70,36 +74,23 @@ body {margin:0;font-family:Arial;background:#0b0f0c;color:#fff;}
     color:#000;
 }
 
-.features {
+.features, .cards {
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
+    gap:15px;
 }
 
-.feature {
-    width:200px;
+.feature, .card {
     background:#fff;
     padding:20px;
     border-radius:12px;
-}
-
-.cards {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
-
-.card {
-    width:220px;
-    background:#fff;
-    border-radius:12px;
-    overflow:hidden;
+    width:200px;
 }
 
 .card img {
     width:100%;
+    border-radius:10px;
 }
 
 .price {
@@ -108,6 +99,29 @@ body {margin:0;font-family:Arial;background:#0b0f0c;color:#fff;}
     padding:20px;
     border-radius:10px;
     display:inline-block;
+}
+
+.fixed-bar {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    display:flex;
+    z-index:999;
+}
+.fixed-bar a {
+    flex:1;
+    text-align:center;
+    padding:15px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.fixed-bar a:first-child {
+    background:#1a73e8;
+    color:#fff;
+}
+.fixed-bar a:last-child {
+    background:#FEE500;
+    color:#000;
 }
 
 .footer {
@@ -124,52 +138,42 @@ body {margin:0;font-family:Arial;background:#0b0f0c;color:#fff;}
 <div class="header">
     <div class="logo">VIP HOMECARE</div>
     <div class="nav">
-        <a href="#">홈</a>
-        <a href="#">서비스</a>
-        <a href="#">요금</a>
-        <a href="#">후기</a>
+        <a href="#home">홈</a>
+        <a href="#service">서비스</a>
+        <a href="#price">요금</a>
+        <a href="#review">후기</a>
     </div>
 </div>
 
-<div class="hero">
-    <h1>강남 프리미엄 방문 홈케어</h1>
-    <p>24시간 상담 · 빠른 방문 · 프리미엄 케어</p>
+<div class="hero" id="home">
+    <div class="hero-content">
+        <h1>강남 프리미엄 방문 홈케어</h1>
+        <p>24시간 상담 · 빠른 방문 · 프라이빗 케어</p>
 
-    <div>
         <a class="btn phone" href="tel:01068600697">📞 전화 예약</a>
-        <a class="btn kakao" href="https://open.kakao.com/o/sMzFxoti" target="_blank">💬 카톡 상담</a>
+        <a class="btn kakao" href="https://open.kakao.com/o/sMzFxoti">💬 카톡 상담</a>
     </div>
 </div>
 
-<div class="section">
-    <h2>서비스 특징</h2>
-    <div class="features">
-        <div class="feature">✔ 24시간 운영</div>
-        <div class="feature">✔ 빠른 방문</div>
-        <div class="feature">✔ 전문 케어</div>
-        <div class="feature">✔ 프라이빗 서비스</div>
-    </div>
-</div>
-
-<div class="section">
+<div class="section" id="service">
     <h2>서비스 안내</h2>
     <div class="cards">
         <div class="card">
-            <img src="main.jpg">
-            <p>힐링 케어</p>
+            <img src="service1.jpg">
+            <p>스웨디시 마사지</p>
         </div>
         <div class="card">
-            <img src="main.jpg">
-            <p>아로마 케어</p>
+            <img src="service2.jpg">
+            <p>아로마 테라피</p>
         </div>
         <div class="card">
-            <img src="main.jpg">
-            <p>프리미엄 케어</p>
+            <img src="service3.jpg">
+            <p>힐링 마사지</p>
         </div>
     </div>
 </div>
 
-<div class="section">
+<div class="section" id="price">
     <h2>이용 요금</h2>
     <div class="price">
         60분 100,000원<br>
@@ -178,12 +182,7 @@ body {margin:0;font-family:Arial;background:#0b0f0c;color:#fff;}
     </div>
 </div>
 
-<div class="section">
-    <h2>이용 방법</h2>
-    <p>1. 전화 또는 카톡 상담 → 2. 위치 안내 → 3. 방문 진행</p>
-</div>
-
-<div class="section">
+<div class="section" id="review">
     <h2>고객 후기</h2>
     <p>⭐⭐⭐⭐⭐ 만족도 높은 서비스</p>
 </div>
@@ -203,6 +202,35 @@ body {margin:0;font-family:Arial;background:#0b0f0c;color:#fff;}
 <div class="footer">
     © Homecare Service
 </div>
+
+<!-- 🔥 하단 고정 -->
+<div class="fixed-bar">
+    <a href="tel:01068600697">📞 전화</a>
+    <a href="https://open.kakao.com/o/sMzFxoti">💬 카톡</a>
+</div>
+
+<script>
+const sections = document.querySelectorAll("div[id]");
+const navLinks = document.querySelectorAll(".nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("active");
+    if (a.getAttribute("href") === "#" + current) {
+      a.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
