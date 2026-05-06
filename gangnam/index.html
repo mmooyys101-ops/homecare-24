@@ -2,23 +2,497 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>강남 24시 홈케어 | 방문 마사지 상담 예약</title>
-<meta name="description" content="강남 24시 홈케어 방문 마사지 서비스. 빠른 상담, 간편 예약, 프라이빗 케어 안내.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>강남 24시 홈케어 | 강남 방문 마사지 · 빠른 예약</title>
+
+<meta name="description" content="강남 24시 홈케어 및 방문 마사지 서비스. 강남역·역삼·선릉 인근 빠른 상담 및 예약 가능. 프라이빗 케어 안내.">
+
+<meta name="keywords" content="강남 홈케어, 강남 방문 마사지, 강남 24시 홈케어, 강남 야간 홈케어, 역삼 홈케어">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial,'Noto Sans KR',sans-serif;
+background:#0b0f0c;
+color:#fff;
+padding-bottom:70px;
+}
+
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.82);
+backdrop-filter:blur(10px);
+z-index:999;
+box-sizing:border-box;
+}
+
+.logo{
+font-size:20px;
+font-weight:900;
+color:#d4af37;
+}
+
+.nav a{
+color:#fff;
+margin-left:15px;
+text-decoration:none;
+font-size:14px;
+}
+
+.hero{
+position:relative;
+height:92vh;
+background:url('../main.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.45));
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
+max-width:700px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 16px;
+border:1px solid #d4af37;
+border-radius:999px;
+color:#d4af37;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.hero h1{
+font-size:44px;
+line-height:1.3;
+margin:0;
+}
+
+.hero h1 span{
+color:#d4af37;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.7;
+margin:20px 0;
+color:#eee;
+}
+
+.btn{
+display:inline-block;
+padding:16px 24px;
+border-radius:12px;
+font-weight:bold;
+text-decoration:none;
+margin-right:10px;
+margin-top:10px;
+}
+
+.phone{
+background:#0f5132;
+color:#fff;
+}
+
+.kakao{
+background:#FEE500;
+color:#000;
+}
+
+.section{
+padding:70px 20px;
+text-align:center;
+}
+
+.section.light{
+background:#f5f1ea;
+color:#111;
+}
+
+.section.dark{
+background:#111;
+color:#fff;
+}
+
+.section h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:#fff;
+color:#111;
+border-radius:16px;
+overflow:hidden;
+width:300px;
+box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h3{
+margin-top:0;
+}
+
+.review-wrap{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+max-width:1000px;
+margin:auto;
+}
+
+.review{
+background:#fff;
+color:#111;
+padding:25px;
+border-radius:16px;
+width:280px;
+line-height:1.7;
+}
+
+.price-box{
+max-width:500px;
+margin:auto;
+background:#06291d;
+padding:30px;
+border-radius:18px;
+border:1px solid #d4af37;
+}
+
+.price-row{
+display:flex;
+justify-content:space-between;
+padding:14px 0;
+border-bottom:1px solid rgba(212,175,55,.25);
+font-size:20px;
+}
+
+.map-wrap{
+max-width:900px;
+margin:auto;
+}
+
+iframe{
+width:100%;
+height:350px;
+border:0;
+border-radius:16px;
+}
+
+.seo-text{
+max-width:900px;
+margin:auto;
+line-height:1.9;
+font-size:17px;
+text-align:left;
+}
+
+.fixed-bar{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+display:flex;
+z-index:9999;
+}
+
+.fixed-bar a{
+flex:1;
+text-align:center;
+padding:16px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.fixed-bar a:first-child{
+background:#0f5132;
+color:#fff;
+}
+
+.fixed-bar a:last-child{
+background:#FEE500;
+color:#000;
+}
+
+.footer{
+background:#000;
+text-align:center;
+padding:25px;
+font-size:12px;
+color:#aaa;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:32px;
+}
+
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
+.card{
+width:92%;
+}
+
+.review{
+width:90%;
+}
+
+.nav{
+display:none;
+}
+
+}
+
+</style>
 </head>
-<body style="margin:0;font-family:Arial;background:#111;color:#fff;text-align:center;">
-<section style="background:url('../main.jpg') center/cover no-repeat;min-height:75vh;padding:120px 20px;">
-<h1 style="color:#d4af37;font-size:34px;">강남 24시 홈케어 방문 마사지</h1>
-<p>강남 지역 빠른 상담 · 프라이빗 방문 케어 · 예약제 운영</p>
-<a href="tel:01068600697" style="background:#0f5132;color:#fff;padding:15px 25px;border-radius:10px;text-decoration:none;">📞 전화 예약</a>
-<a href="https://open.kakao.com/o/sMzFxoti" style="background:#FEE500;color:#000;padding:15px 25px;border-radius:10px;text-decoration:none;">💬 카톡 상담</a>
+
+<body>
+
+<div class="header">
+
+<div class="logo">
+VIP HOMECARE
+</div>
+
+<div class="nav">
+<a href="#service">서비스</a>
+<a href="#price">요금</a>
+<a href="#review">후기</a>
+<a href="#map">위치</a>
+</div>
+
+</div>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+24시간 상담 가능
+</div>
+
+<h1>
+강남 <span>24시</span><br>
+프리미엄 홈케어
+</h1>
+
+<p>
+강남·역삼·선릉 인근 빠른 상담 가능.<br>
+프라이빗 방문 마사지 및 홈케어 서비스를 안내합니다.
+</p>
+
+<a class="btn phone" href="tel:01068600697">
+📞 지금 바로 예약하기
+</a>
+
+<a class="btn kakao" href="https://open.kakao.com/o/sMzFxoti" target="_blank">
+💬 카카오톡 상담
+</a>
+
+</div>
+
 </section>
-<section style="padding:40px 20px;background:#f7f3ed;color:#111;">
-<h2>강남 홈케어 서비스 안내</h2>
-<p>강남, 역삼, 선릉 인근에서 이용 가능한 프리미엄 방문 케어 서비스입니다.</p>
-<img src="../service1.jpg" style="width:30%;max-width:260px;border-radius:12px;">
-<img src="../service2.jpg" style="width:30%;max-width:260px;border-radius:12px;">
-<img src="../service3.jpg" style="width:30%;max-width:260px;border-radius:12px;">
+
+<section class="section light" id="service">
+
+<h2>프리미엄 서비스 안내</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="../service1.jpg">
+<div class="card-content">
+<h3>스웨디시 케어</h3>
+<p>
+부드럽고 편안한 분위기 속에서 프라이빗하게 진행되는 홈케어 서비스입니다.
+</p>
+</div>
+</div>
+
+<div class="card">
+<img src="../service2.jpg">
+<div class="card-content">
+<h3>아로마 테라피</h3>
+<p>
+은은한 분위기와 함께 편안한 힐링 케어를 제공합니다.
+</p>
+</div>
+</div>
+
+<div class="card">
+<img src="../service3.jpg">
+<div class="card-content">
+<h3>힐링 방문 케어</h3>
+<p>
+강남 및 역삼 지역 빠른 상담과 예약이 가능합니다.
+</p>
+</div>
+</div>
+
+</div>
+
 </section>
+
+<section class="section dark" id="price">
+
+<h2>이용 요금 안내</h2>
+
+<div class="price-box">
+
+<div class="price-row">
+<span>60분</span>
+<strong>100,000원</strong>
+</div>
+
+<div class="price-row">
+<span>90분</span>
+<strong>140,000원</strong>
+</div>
+
+<div class="price-row">
+<span>120분</span>
+<strong>180,000원</strong>
+</div>
+
+<p style="margin-top:20px;color:#ccc;">
+예약 및 상세 문의는 전화 또는 카카오톡 상담 가능합니다.
+</p>
+
+</div>
+
+</section>
+
+<section class="section light" id="review">
+
+<h2>고객 후기</h2>
+
+<div class="review-wrap">
+
+<div class="review">
+“상담 응대가 빨라서 편하게 예약했습니다.”<br><br>
+⭐⭐⭐⭐⭐
+</div>
+
+<div class="review">
+“강남에서 늦은 시간에도 상담 가능해서 좋았습니다.”<br><br>
+⭐⭐⭐⭐⭐
+</div>
+
+<div class="review">
+“프라이빗하게 진행돼서 만족도가 높았습니다.”<br><br>
+⭐⭐⭐⭐⭐
+</div>
+
+</div>
+
+</section>
+
+<section class="section dark">
+
+<h2>강남 홈케어 방문 마사지 안내</h2>
+
+<div class="seo-text">
+
+강남 지역에서 이용 가능한 프리미엄 홈케어 및 방문 마사지 서비스를 제공합니다.
+역삼, 선릉, 삼성동 인근까지 빠르게 상담 가능하며,
+24시간 예약 문의를 통해 편리하게 이용 가능합니다.<br><br>
+
+강남 홈케어, 강남 방문 마사지, 역삼 홈케어 서비스를 찾는 고객분들에게
+프라이빗한 환경에서 진행되는 방문 케어를 안내드립니다.<br><br>
+
+빠른 상담과 간편 예약이 가능하며,
+야간 및 늦은 시간 상담 여부는 카카오톡 및 전화 상담을 통해 확인 가능합니다.
+
+</div>
+
+</section>
+
+<section class="section light" id="map">
+
+<h2>위치 안내</h2>
+
+<div class="map-wrap">
+
+<iframe src="https://www.google.com/maps?q=강남역&output=embed"></iframe>
+
+</div>
+
+</section>
+
+<section class="section dark">
+
+<h2>지금 바로 상담하고 예약하세요</h2>
+
+<a class="btn phone" href="tel:01068600697">
+📞 전화 상담
+</a>
+
+<a class="btn kakao" href="https://open.kakao.com/o/sMzFxoti" target="_blank">
+💬 카카오톡 상담
+</a>
+
+</section>
+
+<div class="footer">
+© VIP HOMECARE
+</div>
+
+<div class="fixed-bar">
+
+<a href="tel:01068600697">
+📞 전화 예약
+</a>
+
+<a href="https://open.kakao.com/o/sMzFxoti" target="_blank">
+💬 카톡 상담
+</a>
+
+</div>
+
 </body>
 </html>
